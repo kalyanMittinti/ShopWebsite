@@ -6,7 +6,10 @@ Job Listings: Browse through the latest job opportunities in the programming ind
 Search Functionality: Filter job listings by keywords to find relevant opportunities.
 About Us: Learn more about our mission and the team behind the website.
 Contact Us: Reach out to us with any questions, feedback, or inquiries.
-Responsive Design: The website is designed to be fully responsive, ensuring a seamless experience across different devices and screen sizes.
+
+**Responsive Design:**
+The website is designed to be fully responsive, ensuring a seamless experience across different devices and screen sizes.
+
 **Technologies Used:**
 HTML: Used for structuring the content of the website.
 CSS: Used for styling the website and making it visually appealing.
