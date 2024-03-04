@@ -32,13 +32,13 @@ Copy code
 git clone https://github.com/your-username/programming-job-website.git
 Navigate to the project directory:
 
-bash
-Copy code
-cd programming-job-website
-Open the index.html file in your web browser to view the website.
-
-Contributing
-If you'd like to contribute to the project, please follow these steps:
+    bash
+    Copy code
+    cd programming-job-website
+    Open the index.html file in your web browser to view the website.
+    
+    Contributing
+    If you'd like to contribute to the project, please follow these steps:
 
 Fork the repository on GitHub.
 Create a new branch with a descriptive name for your feature or fix.
