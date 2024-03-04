@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programming Job Website</title>
+    <link rel="stylesheet" href="Jobs.css">
+    <link rel="javascript" href="Jobs.js">
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="dashboard.js"></script>
+</head>
+<body>
+    <!-- <main>
+        <div id="chart-container"></div>
+    </main> -->
+    <!-- <canvas id="myChart"></canvas> -->
+<header>
+    <h1>Programming Job Listings</h1>
+    <!-- <img src="/work-5382501_640.jpg" style="padding-top: 50px; padding-bottom: 50px;"> -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#jobs">Jobs</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- <main>
+<!-- <div class="chart"> -->
+    <!-- <div class="bar" style="width: 100%;">
+        <span style="width: 70%;">January</span>
+        <span style="width: 30%;">70%</span>
+    </div>
+    <div class="bar" style="width: 100%;">
+        <span style="width: 60%;">February</span>
+        <span style="width: 40%;">60%</span>
+    </div>
+    <div class="bar" style="width: 100%;">
+        <span style="width: 80%;">March</span>
+        <span style="width: 20%;">80%</span>
+    </div>
+    <div class="bar" style="width: 100%;">
+        <span style="width: 90%;">April</span>
+        <span style="width: 10%;">90%</span>
+    </div> -->
+    <section id="job-listings">
+        <h2>Job Listings</h2>
+        <form id="filter-form">
+            <label for="keyword">Keyword:</label>
+            <input type="text" id="keyword" name="keyword">
+            <button type="submit">Search </button>
+        </form>
+        <div class="job-listings">
+            <div class="job">
+                <h3>Frontend Developer</h3>
+                <p>Company: ABC Tech</p>
+                <p>Location: New York, NY</p>
+                <p>Description: We are seeking an experienced frontend developer to join our team.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <div class="job">
+                <h3>Backend Developer</h3>
+                <p>Company: Dll Corporation</p>
+                <p>Location: San Francisco, CA</p>
+                <p>Description: Join our team as a backend developer and work on exciting projects.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <div class="job">
+                <h3>Full Stack Developer</h3>
+                <p>Company: DEF Solutions</p>
+                <p>Location: Seattle, WA</p>
+                <p>Description: We're looking for a skilled full stack developer to contribute to our team.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <div class="job">
+                <h3>Test Engineer</h3>
+                <p>Company: HI Technologies</p>
+                <p>Location: Boston, MA</p>
+                <p>Description: Exciting opportunity for a Test engineer to work on innovative projects.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <div class="job">
+                <h3>Cloud Engineer</h3>
+                <p>Company: Microsoft</p>
+                <p>Location: Silicon Valley, Us</p>
+                <p>Description: Exciting opportunity for a Cloud engineer to work on innovative projects.</p>
+                <a href="#">Apply Now</a>
+            </div>
+            <div class="job">
+                <h3>Software Engineer</h3>
+                <p>Company: GHI Technologies</p>
+                <p>Location: India,Hyderabd</p>
+                <p>Description: Exciting opportunity for a software engineer to work on innovative projects.</p>
+                <a href="#">Apply Now</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or inquiries, please feel free to reach out to us.</p>
+        <form>
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+</main> -->
+
+<footer>
+    <p>&copy; 2024 Programming Job Website. All rights reserved.</p>
+</footer>
+
+</body>
+</html>
+<script>
+ const sectionsData = {
+    home: {
+        title: "Welcome to Our Programming Job Website",
+        content: "Find your dream job in the programming industry.",
+    },
+    about: {
+        title: "About Us",
+        content: "We are dedicated to connecting talented programmers with exciting job opportunities.",
+    },
+    jobs: {
+        title: "Job Listings",
+        content: "Explore the latest job opportunities in the programming industry.",
+    },
+    contact: {
+        title: "Contact Us",
+        content: "If you have any questions or inquiries, please feel free to reach out to us.",
+    }
+};
+document.addEventListener("DOMContentLoaded", function() {
+    const sectionsData = {
+        home: {
+            title: "Welcome to Our Programming Job Website",
+            content: "Find your dream job in the programming industry.",
+        },
+        about: {
+            title: "About Us",
+            content: "We are dedicated to connecting talented programmers with exciting job opportunities.",
+        },
+        jobs: {
+            title: "Job Listings",
+            content: "Explore the latest job opportunities in the programming industry.",
+        },
+        contact: {
+            title: "Contact Us",
+            content: "If you have any questions or inquiries, please feel free to reach out to us.",
+        }
+    };
+
+    const buttons = document.querySelectorAll("nav ul li a");
+    buttons.forEach(button => {
+        button.addEventListener("click", function(event) {
+            event.preventDefault();
+            const sectionName = button.textContent.toLowerCase();
+            const sectionData = sectionsData[sectionName];
+            updateSectionContent(sectionData);
+        });
+    });
+
+    function updateSectionContent(sectionData) {
+        const titleElement = document.querySelector("main h2");
+        const contentElement = document.querySelector("main p");
+        titleElement.textContent = sectionData.title;
+        contentElement.textContent = sectionData.content;
+    }
+});
+</script>
+</body>
+</html>
