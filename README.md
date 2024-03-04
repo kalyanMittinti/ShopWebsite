@@ -24,3 +24,6 @@ The website is designed to be fully responsive, ensuring a seamless experience a
     Git: Used for version control and collaboration among team members.
     
     GitHub: Used for hosting the project repository and managing project tasks.
+
+
+    
