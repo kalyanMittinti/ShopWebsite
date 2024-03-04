@@ -29,12 +29,12 @@ Clone the repository to your local machine using the following command:
 
 bash
 Copy code
-git clone https://github.com/your-username/programming-job-website.git
+**git clone https://github.com/your-username/programming-job-website.git**
 Navigate to the project directory:
 
     bash
     Copy code
-    cd programming-job-website
+   ** cd programming-job-website**
     Open the index.html file in your web browser to view the website.
     
     Contributing
